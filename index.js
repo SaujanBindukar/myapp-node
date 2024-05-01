@@ -17,12 +17,16 @@ app.get('/users', (req, res) => {
 res.send('Hello users here ' +username);
 })
 
+app.get('/users/:id', (req, res) => {
+  const id= req.params;
+  //sending response to client  
+  res.json(id)
+})
+
 
 app.post('/users',(req,res)=>{
-
   const myQuery= req.query.param;
   console.log(myQuery);
-
   res.json(req.body);
 })
 
